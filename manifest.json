@@ -1,0 +1,53 @@
+{
+    "background": {
+        "scripts": [ "js/background.js" ],
+        "persistent": true
+    },
+    "browser_action": {
+        "default_icon": {
+            "16": "images/icon_16.png",
+            "48": "images/icon_48.png",
+            "128": "images/icon_128.png"
+        },
+        "default_title": "Open New Tab"
+    },
+    "chrome_url_overrides" : {
+        "newtab": "newtab.html"
+    },
+    "description": "A simple new tab page, with a personal dashboard featuring weather, to-do, notes, bookmarks and beautiful backgrounds.",
+    "icons": {
+        "16": "images/icon_16.png",
+        "48": "images/icon_48.png",
+        "128": "images/icon_128.png"
+    },
+    
+    "web_accessible_resources": [
+        "newtab.html"
+    ],
+    "content_security_policy": "script-src 'self' 'unsafe-eval';object-src 'self'",
+    "manifest_version": 2,
+    "name": "Figy",
+    "permissions": [ "storage", 
+        "activeTab", 
+        "tabs", "history", 
+        "chrome://favicon/*", 
+        "history" ,
+        "webRequest",
+        "webRequestBlocking",
+        "webNavigation",
+        "management",
+        "https://Figy.org/*",
+        "*://api.bing.com/"],
+    
+    "version": "1.0.0",
+    "chrome_settings_overrides": {
+        "search_provider": {
+        "name": "Figy",
+        "keyword": "Figy",
+        "favicon_url": "https://Figy.org/favicon.ico",
+        "search_url": "https://Figy.org/api/api/search/?os=t&q={searchTerms}",
+        "encoding": "UTF-8",
+        "is_default": true
+        }
+      }
+}
